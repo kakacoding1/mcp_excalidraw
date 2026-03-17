@@ -15,7 +15,7 @@ Two modes are available. Try MCP first — it has more capabilities.
 
 **Neither works?** Tell the user:
 > The Excalidraw canvas server is not running. To set up:
-> 1. `git clone https://github.com/yctimlin/mcp_excalidraw && cd mcp_excalidraw`
+> 1. `git clone https://github.com/kakacoding1/mcp_excalidraw && cd mcp_excalidraw`
 > 2. `npm ci && npm run build`
 > 3. `PORT=3000 npm run canvas`
 > 4. Open `http://localhost:3000` in a browser
