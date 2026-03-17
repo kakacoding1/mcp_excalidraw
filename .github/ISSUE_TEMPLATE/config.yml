@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Repository maintenance plan
+    url: https://github.com/kakacoding1/mcp_excalidraw/blob/main/docs/plans/2026-03-17-repository-maintenance-plan.md
+    about: Review the current maintenance priorities before opening a new issue.
