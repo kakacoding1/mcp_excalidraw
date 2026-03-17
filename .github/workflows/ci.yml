@@ -34,6 +34,10 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Run smoke test
+        if: matrix.node-version == '20.x'
+        run: npm run smoke
+
       - name: Check build artifacts
         run: |
           echo "Checking if build artifacts exist..."
