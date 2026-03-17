@@ -109,6 +109,8 @@ PORT=3000 npm run canvas
 
 Open `http://localhost:3000`.
 
+Health checks are available at `http://localhost:3000/health` and `http://localhost:3000/api/health`.
+
 Terminal 2: run the MCP server (stdio)
 ```bash
 EXPRESS_SERVER_URL=http://localhost:3000 node dist/index.js
@@ -445,6 +447,16 @@ Full schemas are discoverable via `tools/list` or in `skills/excalidraw-skill/re
 ```bash
 curl http://localhost:3000/health
 ```
+
+### Repository Smoke Test (Local)
+
+```bash
+npm run type-check
+npm run build
+npm run smoke
+```
+
+The smoke script starts the built canvas server on an ephemeral port and verifies the JSON health response.
 
 ### MCP Smoke Test (MCP Inspector)
 
