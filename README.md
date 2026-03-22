@@ -105,6 +105,12 @@ Terminal 1: start the canvas
 PORT=3000 npm run canvas
 ```
 
+Windows PowerShell:
+```powershell
+$env:PORT=3000
+npm run canvas
+```
+
 > **Security note:** The server defaults to binding on `localhost` only. If you need to expose it on a network interface (e.g. Docker, remote access), set `HOST=0.0.0.0` — but ensure you have network-level access controls in place, as the API has no built-in authentication.
 
 Open `http://localhost:3000`.
@@ -112,6 +118,12 @@ Open `http://localhost:3000`.
 Terminal 2: run the MCP server (stdio)
 ```bash
 EXPRESS_SERVER_URL=http://localhost:3000 node dist/index.js
+```
+
+Windows PowerShell:
+```powershell
+$env:EXPRESS_SERVER_URL='http://localhost:3000'
+node dist/index.js
 ```
 
 ## Quick Start (Docker)
