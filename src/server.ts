@@ -1162,14 +1162,27 @@ app.get('/', (req: Request, res: Response) => {
   });
 });
 
-// Health check endpoint
+function buildHealthPayload() {
+  return {
+    success: true,
+    service: 'mcp-excalidraw-canvas',
+    status: 'ok',
+    host: HOST,
+    port: PORT,
+    elementCount: elements.size,
+    snapshotCount: snapshots.size,
+    websocketClientCount: clients.size,
+    timestamp: new Date().toISOString()
+  };
+}
+
+// Health check endpoints
 app.get('/health', (req: Request, res: Response) => {
-  res.json({
-    status: 'healthy',
-    timestamp: new Date().toISOString(),
-    elements_count: elements.size,
-    websocket_clients: clients.size
-  });
+  res.json(buildHealthPayload());
+});
+
+app.get('/api/health', (req: Request, res: Response) => {
+  res.json(buildHealthPayload());
 });
 
 // Sync status endpoint
